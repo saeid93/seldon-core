@@ -230,6 +230,7 @@ examples/models/autoscaling/autoscaling_example.py
 
 # python venv
 venv/
+<<<<<<< HEAD
 
 
 # saeid
@@ -239,3 +240,5 @@ tfgpt2model
 tfgpt2model1
 tfgpt2model2
 model.onnx
+=======
+>>>>>>> 8ee342c90141d1d5af804e58e00e52d1c4edcf49
