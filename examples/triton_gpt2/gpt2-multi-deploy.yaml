@@ -1,0 +1,17 @@
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  name: gpt2-multi
+spec:
+  predictors:
+  - graph:
+      implementation: TRITON_SERVER
+      logger:
+        mode: all
+      modelUri: s3://language-models-multi
+      envSecretRefName: seldon-init-container-secret
+      name: gpt2-multi
+      type: MODEL
+    name: default
+    replicas: 1
+  protocol: kfserving

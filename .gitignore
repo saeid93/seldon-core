@@ -230,3 +230,12 @@ examples/models/autoscaling/autoscaling_example.py
 
 # python venv
 venv/
+
+
+# saeid
+model1
+model2
+tfgpt2model
+tfgpt2model1
+tfgpt2model2
+model.onnx
