@@ -2,9 +2,13 @@ resources:
 - manager.yaml
 - configmap.yaml
 - serviceaccount.yaml
+
+patches:
+- path: deployment-patch.yaml
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: controller
-  newName: docker.io/seldonio/seldon-core-operator
+  newName: sdghafouri/seldon-core-operator
   newTag: 1.18.0-dev
