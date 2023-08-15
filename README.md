@@ -1,3 +1,18 @@
+# Saeid - changes needed for custom installation
+1. Changing the image in [operator/Makefile](operator/Makefile) to save images in remote image repository:
+```bash
+REPO=sdghafouri
+IMG ?= ${REPO}/${IMAGE_NAME_BASE}:${VERSION}
+IMG_REDHAT ?= ${REPO}/${IMAGE_NAME_BASE_REDHAT}:${VERSION}
+```
+2. Added the file [operator/config/manager/deployment-patch.yaml](operator/config/manager/deployment-patch.yaml) and changes to the [operator/config/manager/kustomization.yaml](operator/config/manager/kustomization.yaml) to make sure always the latest image is downloaded
+
+3. The following change to the [operator/config/manager/manager.yaml](operator/config/manager/manager.yaml) files to avoid error on the operator startup:
+```bash
+MANAGER_LEADER_ELECTION_RETRY_PERIOD_SECS
+          value: ""	          value: "0"
+```
+
 # Seldon Core: Blazing Fast, Industry-Ready ML
 An open source platform to deploy your machine learning models on Kubernetes at massive scale.
 
